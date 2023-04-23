@@ -8,6 +8,8 @@ public class StarwarsswapiApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(StarwarsswapiApplication.class, args);
+
+		System.out.println("no pain no gain :]");
 	}
 
 }
