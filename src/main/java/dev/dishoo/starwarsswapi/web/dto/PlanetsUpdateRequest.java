@@ -1,6 +1,6 @@
 package dev.dishoo.starwarsswapi.web.dto;
 
-import java.util.List;
+import java.util.Set;
 
 import dev.dishoo.starwarsswapi.validation.ValidUrl;
 import lombok.Builder;
@@ -22,8 +22,8 @@ public class PlanetsUpdateRequest {
     private String surfaceWater;
     private String residents;
 
-    private List<String> residentsUrls;
-    private List<String> filmsUrls;
+    private Set<String> residentsUrls;
+    private Set<String> filmsUrls;
     
     @ValidUrl(message = "URLs shouldn't be longer than 39 charakters")
     private String url;

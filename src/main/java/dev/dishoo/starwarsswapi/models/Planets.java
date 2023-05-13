@@ -1,12 +1,13 @@
 package dev.dishoo.starwarsswapi.models;
 
-import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 import org.springframework.data.annotation.Id;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.ManyToMany;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -35,10 +36,13 @@ public class Planets {
     private String climate;
     private String terrain;
     private String surfaceWater;
-    private String residents;
 
-    private List<String> residentsUrls;
-    private List<String> filmsUrls;
+    @ManyToMany(mappedBy = "planets")
+    private Set<Films> films;
+
+    @ManyToMany(mappedBy = "planets")
+    private Set<People> residents;
+    
     
     private String url;
 

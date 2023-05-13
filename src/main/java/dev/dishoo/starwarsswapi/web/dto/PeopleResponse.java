@@ -1,6 +1,6 @@
 package dev.dishoo.starwarsswapi.web.dto;
 
-import java.util.List;
+import java.util.Set;
 
 import lombok.Builder;
 import lombok.Data;
@@ -21,10 +21,10 @@ public class PeopleResponse {
     private String skinColor;
     private String homeWorld;
    
-    private List <String> filmsUrls;
-    private List <String> speciesUrls;
-    private List <String> starshipsUrls;
-    private List <String> vehiclesUrls;
+    private Set <String> filmsUrls;
+    private Set <String> speciesUrls;
+    private Set <String> starshipsUrls;
+    private Set <String> vehiclesUrls;
 
     private String url;
 }

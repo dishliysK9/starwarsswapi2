@@ -1,6 +1,6 @@
 package dev.dishoo.starwarsswapi.web.dto;
 
-import java.util.List;
+import java.util.Set;
 
 import lombok.Builder;
 import lombok.Data;
@@ -19,10 +19,9 @@ public class PlanetsResponse {
     private String climate;
     private String terrain;
     private String surfaceWater;
-    private String residents;
 
-    private List<String> residentsUrls;
-    private List<String> filmsUrls;
+    private Set<String> residentsUrls;
+    private Set<String> filmsUrls;
     
     private String url;
 }

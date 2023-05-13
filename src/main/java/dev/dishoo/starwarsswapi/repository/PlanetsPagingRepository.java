@@ -2,10 +2,10 @@ package dev.dishoo.starwarsswapi.repository;
 
 import java.util.UUID;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
 
 import dev.dishoo.starwarsswapi.models.Planets;
 
-public interface  PlanetsPagingRepository extends CrudRepository<Planets, UUID>{
+public interface  PlanetsPagingRepository extends PagingAndSortingRepository<Planets, UUID>{
     
 }

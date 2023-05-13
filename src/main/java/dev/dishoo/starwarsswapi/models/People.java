@@ -1,12 +1,18 @@
 package dev.dishoo.starwarsswapi.models;
 
-import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 import org.springframework.data.annotation.Id;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -37,10 +43,37 @@ public class People {
     private String skinColor;
     private String homeWorld;
    
-    private List <String> filmsUrls;
-    private List <String> speciesUrls;
-    private List <String> starshipsUrls;
-    private List <String> vehiclesUrls;
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "people_species", joinColumns = @JoinColumn(name = "people_id"),
+            inverseJoinColumns = @JoinColumn(name = "species_id"))
+    @JsonIgnore
+    private Set<Species> species;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "people_starships", joinColumns = @JoinColumn(name = "people_id"),
+            inverseJoinColumns = @JoinColumn(name = "starships_id"))
+    @JsonIgnore
+    private Set<Starships> starships;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "people_vehicles", joinColumns = @JoinColumn(name = "people_id"),
+            inverseJoinColumns = @JoinColumn(name = "vehicles_id"))
+    @JsonIgnore
+    private Set<Vehicles> vehicles;
+    
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "people_planets", joinColumns = @JoinColumn(name = "people_id"),
+            inverseJoinColumns = @JoinColumn(name = "planets_id"))
+    @JsonIgnore
+    private Set<Planets> planets;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "people_films", joinColumns = @JoinColumn(name = "people_id"),
+            inverseJoinColumns = @JoinColumn(name = "films_id"))
+    @JsonIgnore
+    private Set<Films> films;
+
+    
 
     private String url;
 

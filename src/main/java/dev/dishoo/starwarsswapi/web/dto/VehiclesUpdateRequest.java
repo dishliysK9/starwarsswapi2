@@ -1,6 +1,6 @@
 package dev.dishoo.starwarsswapi.web.dto;
 
-import java.util.List;
+import java.util.Set;
 
 import dev.dishoo.starwarsswapi.validation.ValidUrl;
 import lombok.Builder;
@@ -23,8 +23,8 @@ public class VehiclesUpdateRequest {
     private String cargoCapacity;
     private String consumables;
    
-    private List <String> filmsUrls;
-    private List <String> pilotsUrls;
+    private Set <String> filmsUrls;
+    private Set <String> pilotsUrls;
 
     @ValidUrl(message = "URLs shouldn't be longer than 39 charakters")
     private String url;

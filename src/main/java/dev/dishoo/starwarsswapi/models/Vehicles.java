@@ -1,12 +1,13 @@
 package dev.dishoo.starwarsswapi.models;
 
-import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 import org.springframework.data.annotation.Id;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.ManyToMany;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -38,8 +39,11 @@ public class Vehicles {
     private String cargoCapacity;
     private String consumables;
    
-    private List <String> filmsUrls;
-    private List <String> pilotsUrls;
+    @ManyToMany(mappedBy = "vehicles")
+    private Set <Films> films;
+
+    @ManyToMany(mappedBy = "vehicles")
+    private Set <People> pilots;
 
     private String url;
 

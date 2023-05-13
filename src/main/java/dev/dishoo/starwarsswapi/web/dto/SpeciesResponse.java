@@ -1,6 +1,6 @@
 package dev.dishoo.starwarsswapi.web.dto;
 
-import java.util.List;
+import java.util.Set;
 
 import lombok.Builder;
 import lombok.Data;
@@ -23,8 +23,8 @@ public class SpeciesResponse {
     private String language;
     private String homeWorld;
 
-    private List<String> peopleUrls;
-    private List<String> filmsUrls;
+    private Set<String> peopleUrls;
+    private Set<String> filmsUrls;
     
     private String url;
 }

@@ -1,6 +1,6 @@
 package dev.dishoo.starwarsswapi.web.dto;
 
-import java.util.List;
+import java.util.Set;
 
 import dev.dishoo.starwarsswapi.validation.ValidUrl;
 import lombok.Builder;
@@ -21,10 +21,10 @@ public class PeopleCreateRequest {
     private String skinColor;
     private String homeWorld;
    
-    private List <String> filmsUrls;
-    private List <String> speciesUrls;
-    private List <String> starshipsUrls;
-    private List <String> vehiclesUrls;
+    private Set <String> filmsUrls;
+    private Set <String> speciesUrls;
+    private Set <String> starshipsUrls;
+    private Set <String> vehiclesUrls;
 
     @ValidUrl(message = "URLs shouldn't be longer than 39 charakters")
     private String url;

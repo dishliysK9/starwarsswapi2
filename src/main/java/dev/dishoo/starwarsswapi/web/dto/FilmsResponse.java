@@ -1,7 +1,7 @@
 package dev.dishoo.starwarsswapi.web.dto;
 
 import java.util.Date;
-import java.util.List;
+import java.util.Set;
 
 import lombok.Builder;
 import lombok.Data;
@@ -19,11 +19,12 @@ public class FilmsResponse {
 
     private Date releaseDate;
 
-    private List<String> speciesUrls;
-    private List<String> starshipsUrls;
-    private List<String> vehiclesUrls;
-    private List<String> charactersUrls;
-    private List<String> planetsUrls;
+    private Set<String> speciesUrls;
+    private Set<String> starshipsUrls;
+    private Set<String> vehiclesUrls;
+    private Set<String> charactersUrls;
+    private Set<String> planetsUrls;
+
     
     private String url;
 }

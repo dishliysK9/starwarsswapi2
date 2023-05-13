@@ -1,6 +1,6 @@
 package dev.dishoo.starwarsswapi.web.dto;
 
-import java.util.List;
+import java.util.Set;
 
 import dev.dishoo.starwarsswapi.validation.ValidUrl;
 import lombok.Builder;
@@ -24,8 +24,8 @@ public class SpeciesCreateRequest {
     private String language;
     private String homeWorld;
 
-    private List<String> peopleUrls;
-    private List<String> filmsUrls;
+    private Set<String> peopleUrls;
+    private Set<String> filmsUrls;
     
     @ValidUrl(message = "URLs shouldn't be longer than 39 charakters")
     private String url;

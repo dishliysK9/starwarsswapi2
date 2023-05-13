@@ -1,6 +1,6 @@
 package dev.dishoo.starwarsswapi.web.dto;
 
-import java.util.List;
+import java.util.Set;
 
 import lombok.Builder;
 import lombok.Data;
@@ -22,8 +22,8 @@ public class VehiclesResponse {
     private String cargoCapacity;
     private String consumables;
    
-    private List <String> filmsUrls;
-    private List <String> pilotsUrls;
+    private Set <String> filmsUrls;
+    private Set <String> pilotsUrls;
 
     
     private String url;
