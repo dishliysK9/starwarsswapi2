@@ -4,13 +4,12 @@ import java.util.Date;
 import java.util.Set;
 import java.util.UUID;
 
-import org.springframework.data.annotation.Id;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;

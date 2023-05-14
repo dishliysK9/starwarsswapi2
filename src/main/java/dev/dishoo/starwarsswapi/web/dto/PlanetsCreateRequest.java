@@ -20,7 +20,7 @@ public class PlanetsCreateRequest {
     private String climate;
     private String terrain;
     private String surfaceWater;
-    private String residents;
+    
 
     private Set<String> residentsUrls;
     private Set<String> filmsUrls;
