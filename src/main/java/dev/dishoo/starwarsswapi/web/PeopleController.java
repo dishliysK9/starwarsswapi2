@@ -9,5 +9,5 @@ import lombok.AllArgsConstructor;
 @RequestMapping("/people")
 @AllArgsConstructor
 public class PeopleController {
-    
+    haha
 }
