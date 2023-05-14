@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 import lombok.AllArgsConstructor;
 
 @RestController
-@RequestMapping("/films")
+@RequestMapping("/starwarsswapi/films")
 @AllArgsConstructor
 public class FilmsController {
 

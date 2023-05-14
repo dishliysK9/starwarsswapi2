@@ -33,20 +33,61 @@ public interface FilmsMapper {
     void updateModelFromDto(FilmsUpdateRequest filmsUpdateDto, @MappingTarget Films films);
 
     //Map From Set<Films> "films" to Set<String> "filmsUrls"
-
-    String mapSingle(Films films);
-
-    default Set<String> modelToUrl (Set<Films> films){
-
-        if (films == null){
-        return null;
+    static Set<String> modelToUrl(Set<People> people) {
+        // if (people == null) {
+        // return null;
+        // }
+        Set<String> peopleUrls = new HashSet<String>();
+        for (People person : people) {
+            peopleUrls.add("http://localhost:8080/starwarsswapi/people/" + person.getId());
         }
-        Set<String> filmsUrls = new HashSet<String>();
-        for(Films film:films){
-            String url = mapSingle(film);
-            filmsUrls.add(url);
-         }
-         return filmsUrls;
+        return peopleUrls;
     }
+
+    static Set<String> modelToUrl(Set<Planets> planets) {
+        // if (planets == null) {
+        // return null;
+        // }
+        Set<String> planetUrls = new HashSet<String>();
+        for (Planets planet : planets) {
+            planetUrls.add("http://localhost:8080/starwarsswapi/planets/" + planet.getId());
+        }
+        return planetUrls;
+    }
+    
+
+    static Set<String> modelToUrl(Set<Species> species) {
+        // if (species == null) {
+        // return null;
+        // }
+        Set<String> speciesUrls = new HashSet<String>();
+        for (Species specie : species) {
+            speciesUrls.add("http://localhost:8080/starwarsswapi/species/" + specie.getId());
+        }
+        return speciesUrls;
+    }
+
+    static Set<String> modelToUrl(Set<Starships> starships) {
+        // if (starships == null) {
+        // return null;
+        // }
+        Set<String> starshipUrls = new HashSet<String>();
+        for (Starships starship : starships) {
+            starshipUrls.add("http://localhost:8080/starwarsswapi/starships/" + starship.getId());
+        }
+        return starshipUrls;
+    }
+    static Set<String> modelToUrl(Set<Vehicles> vehicles) {
+    // if (vehicles == null) {
+    // return null;
+    // }
+    Set<String> vehicleUrls = new HashSet<String>();
+    for (Vehicles vehicle : vehicles) {
+        vehicleUrls.add("http://localhost:8080/starwarsswapi/vehicles/" + vehicle.getId());
+    }
+    return vehicleUrls;
+}
+
+    
 }
 
