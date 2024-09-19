@@ -1,2 +1,8 @@
-This is "swapi.dev" based java springboot API.
-STAR WARS Theme
+#Java implementation of https://swapi.dev
+
+* Spring Data Jpa
+* Spring Security using tokens
+* Pagination
+* Postgres DB
+* Hibernate
+  & others
